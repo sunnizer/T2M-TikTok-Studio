@@ -1,0 +1,36 @@
+{
+  "name": "t2m-tiktok-studio",
+  "productName": "T2M TikTok Studio",
+  "version": "0.1.0",
+  "description": "T2M TikTok Studio desktop screenshot MVP (Windows and macOS)",
+  "main": "src/main.js",
+  "author": "T2M Media and Solutions",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check src/main.js && node --check src/automation.js && node --check src/utils.js && node --check src/metrics.js && node --check src/preload.js && node --check src/renderer.js && node --check src/updates.js",
+    "dist:win": "electron-builder --win nsis --x64 --publish never",
+    "dist:mac": "electron-builder --mac dmg zip --publish never"
+  },
+  "dependencies": {
+    "playwright-core": "1.64.1",
+    "electron-updater": "6.8.9"
+  },
+  "devDependencies": {
+    "electron": "44.9.3",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "vn.t2magency.tiktokstudio",
+    "productName": "T2M TikTok Studio",
+    "asar": true,
+    "directories": {"output": "release"},
+    "files": ["src/**/*", "assets/**/*", "package.json", "node_modules/**/*"],
+    "win": {"target": [{"target": "nsis", "arch": ["x64"]}]},
+    "nsis": {"oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true},
+    "mac": {"target": ["dmg", "zip"], "category": "public.app-category.productivity", "hardenedRuntime": true},
+    "publish": [{"provider": "generic", "url": "https://www.t2magency.vn/api/tiktok-studio/releases"}]
+  }
+}

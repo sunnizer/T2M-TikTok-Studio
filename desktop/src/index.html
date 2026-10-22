@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>T2M TikTok Studio</title><link rel="stylesheet" href="styles.css">
+</head><body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo">T2M<span> STUDIO</span></div>
+    <div class="side-item active">◫ &nbsp; TikTok Screenshots</div>
+    <div class="side-item">◷ &nbsp; History <small>Coming later</small></div>
+    <div class="side-item">⌁ &nbsp; Analytics <small>Coming later</small></div>
+    <div class="sidebar-bottom"><div class="online-dot"></div> Local processing<br><small>Không cần tài khoản hoặc License</small></div>
+  </aside>
+  <main class="main">
+    <header><div><p class="eyebrow">DESKTOP BETA • WINDOWS + MACOS</p><h1>TikTok Screenshot Studio</h1><p class="sub">Batch Views & Engagement Evidence — xử lý qua Google Chrome</p></div><span id="version" class="version">v0.1.0</span></header>
+    <section class="panel">
+      <div class="title-row"><h2>01 / Danh sách video</h2><span class="pill">Tối đa 200 link</span></div>
+      <label for="links">TikTok URLs <span class="muted">• Mỗi link một dòng</span></label>
+      <textarea id="links" spellcheck="false" placeholder="https://www.tiktok.com/@username/video/7690884460325293332"></textarea>
+      <div class="toolbar"><button id="chromeBtn" class="secondary">◉ Mở Chrome & Đăng nhập TikTok</button><span class="muted small">Sử dụng profile Chrome riêng của T2M, đăng nhập một lần.</span></div>
+    </section>
+    <section class="panel">
+      <div class="title-row"><h2>02 / Chế độ chụp</h2></div>
+      <div class="modes">
+        <label class="mode"><input type="radio" name="mode" value="profile" checked><div><strong>Views Only</strong><span>Chụp thumbnail trên trang Profile</span></div></label>
+        <label class="mode"><input type="radio" name="mode" value="engagement"><div><strong>Views + Engagement</strong><span>Mở thẳng video, chụp Views / Likes / Comments / Shares</span></div></label>
+      </div>
+      <div class="options"><label>Chờ trang tải&nbsp; <select id="wait"><option value="1200">1.2 giây</option><option value="2000" selected>2 giây</option><option value="3500">3.5 giây</option></select></label><label class="small muted"><input type="checkbox" id="resume" checked> Tiếp tục, bỏ qua ảnh đã lưu của Batch gần nhất</label></div>
+      <div class="buttons"><button id="startBtn" class="primary">▶ Bắt đầu chụp</button><button id="stopBtn" class="danger" disabled>■ Dừng</button><button id="folderBtn" class="secondary">◧ Mở thư mục ảnh</button></div>
+    </section>
+    <section class="panel result-panel">
+      <div class="title-row"><h2>03 / Tiến độ và kết quả</h2><span id="counter" class="pill">0 / 0</span></div>
+      <div class="track"><div id="bar"></div></div>
+      <p id="status" class="status">Sẵn sàng. Dán link và bắt đầu.</p>
+      <div id="results" class="results"></div>
+    </section>
+    <section class="panel update-panel">
+      <div class="title-row"><h2>Software Updates</h2><span class="pill">T2M</span></div>
+      <div class="update-line"><div><strong id="updateTitle">Chưa cấu hình máy chủ Update</strong><p id="updateDescription" class="muted small">MVP chạy thử. Tự cập nhật sẽ hoạt động khi có bản cài được phát hành.</p></div><div class="update-buttons"><button id="checkBtn" class="secondary">⟳ Check Update</button><button id="downloadBtn" class="primary" hidden>Download Update</button><button id="installBtn" class="primary" hidden>Install & Restart</button></div></div>
+    </section>
+    <footer>T2M TikTok Studio • Ảnh Engagement có lớp ghi chú do T2M tạo, kèm JSON nguồn dữ liệu. Không vượt CAPTCHA hay giới hạn TikTok.</footer>
+  </main>
+</div>
+<script src="renderer.js"></script></body></html>
